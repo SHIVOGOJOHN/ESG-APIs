@@ -1,10 +1,9 @@
-name: Ping Render API Twice Daily
+name: Ping Render API Every 6 Hours
 
 on:
   schedule:
-    - cron: '0 6 * * *'    # 6 AM UTC
-    - cron: '0 18 * * *'   # 6 PM UTC
-  workflow_dispatch:       # Allow manual run
+    - cron: '0 */6 * * *'   # Runs every 6 hours UTC
+  workflow_dispatch:        # Allows manual triggering
 
 jobs:
   ping:
