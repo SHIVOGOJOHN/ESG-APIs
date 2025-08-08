@@ -123,6 +123,11 @@ gov_order = ['independent_board_ratio',
         'governance_framework_score',
         'esg_score']
 
+# Testing route
+@app.get("/ping")
+def ping():
+    return {"message": "pong"}
+    
 # Route for combined esg financial prediction
 @app.post('/esg_financial_returns')
 def predict_esg(input: EsgInput):
