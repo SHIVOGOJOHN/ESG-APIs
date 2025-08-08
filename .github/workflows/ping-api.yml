@@ -10,8 +10,6 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Send POST request to wake up ESG API
+      - name: Send GET request to wake up ESG API
         run: |
-          curl -X POST https://esg-apis.onrender.com/esg_financial_returns \
-            -H "Content-Type: application/json" \
-            -d '{"carbon_emissions": 0.5, "renewable_energy_ratio": 0.2, "waste_management_score": 7.0, "water_usage_intensity": 1.5, "biodiversity_score": 3.0, "excluded_sector": 1.0, "employee_satisfaction": 4.5, "diversity_index": 0.4, "turnover_rate": 0.1, "philanthropy_spend": 0.2, "supply_chain_ethics_score": 0.5, "data_privacy_compliance": 1.0, "independent_board_ratio": 0.6, "executive_pay_ratio": 1.5, "proxy_voting_score": 0.8, "risk_mgmt_score": 0.9, "audit_transparency": 0.7, "governance_framework_score": 0.85, "esg_score": 6.5}'
+          curl -s https://esg-apis.onrender.com/ping
