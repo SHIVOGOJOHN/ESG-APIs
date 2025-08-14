@@ -225,7 +225,7 @@ def predict_gov_roe(input: GovInput):
     input_array = np.array([[input_dict[feature] for feature in gov_order]])
     input_scaled = gov_scaler_roe.transform(input_array)
     prediction = gov_roe.predict(input_scaled)
-    return {"pediction": float(prediction[0])}
+    return {"prediction": float(prediction[0])}
 
 # Route for gov-profit margins
 @app.post('/gov_prft')
